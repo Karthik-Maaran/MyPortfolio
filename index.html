@@ -1,0 +1,553 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Karthi Keyan | Portfolio</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #080808;
+            color: #ffffff;
+            line-height: 1.6;
+        }
+
+        /* NAVBAR */
+
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            padding: 20px 8%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: rgba(8, 8, 8, 0.9);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            border-bottom: 1px solid #222;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .logo span {
+            color: #00e5ff;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin-left: 30px;
+            font-size: 15px;
+            transition: 0.3s;
+        }
+
+        nav a:hover {
+            color: #00e5ff;
+        }
+
+        /* HERO */
+
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            padding: 120px 8% 60px;
+            background:
+                radial-gradient(circle at 80% 30%, #00333a 0%, transparent 30%),
+                #080808;
+        }
+
+        .hero-content {
+            max-width: 750px;
+        }
+
+        .small-title {
+            color: #00e5ff;
+            font-size: 18px;
+            margin-bottom: 15px;
+        }
+
+        .hero h1 {
+            font-size: clamp(45px, 7vw, 85px);
+            line-height: 1.05;
+            margin-bottom: 20px;
+        }
+
+        .hero h1 span {
+            color: #00e5ff;
+        }
+
+        .hero p {
+            color: #aaa;
+            font-size: 18px;
+            max-width: 650px;
+            margin-bottom: 35px;
+        }
+
+        .buttons {
+            display: flex;
+            gap: 15px;
+        }
+
+        .btn {
+            padding: 13px 25px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .primary {
+            background: #00e5ff;
+            color: #000;
+        }
+
+        .primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 0 25px rgba(0, 229, 255, 0.5);
+        }
+
+        .secondary {
+            border: 1px solid #444;
+            color: white;
+        }
+
+        .secondary:hover {
+            border-color: #00e5ff;
+            color: #00e5ff;
+        }
+
+        /* SECTIONS */
+
+        section {
+            padding: 100px 8%;
+        }
+
+        .section-title {
+            font-size: 40px;
+            margin-bottom: 50px;
+        }
+
+        .section-title span {
+            color: #00e5ff;
+        }
+
+        .about {
+            max-width: 850px;
+            color: #aaa;
+            font-size: 18px;
+        }
+
+        /* SKILLS */
+
+        .skills-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 20px;
+        }
+
+        .skill {
+            padding: 25px;
+            background: #111;
+            border: 1px solid #222;
+            border-radius: 15px;
+            text-align: center;
+            transition: 0.3s;
+        }
+
+        .skill:hover {
+            transform: translateY(-8px);
+            border-color: #00e5ff;
+        }
+
+        .skill h3 {
+            color: #00e5ff;
+        }
+
+        /* PROJECTS */
+
+        .projects {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+        }
+
+        .project-card {
+            background: #111;
+            border: 1px solid #222;
+            border-radius: 18px;
+            padding: 30px;
+            transition: 0.3s;
+        }
+
+        .project-card:hover {
+            transform: translateY(-8px);
+            border-color: #00e5ff;
+        }
+
+        .project-card h3 {
+            margin-bottom: 15px;
+            color: #00e5ff;
+        }
+
+        .project-card p {
+            color: #aaa;
+            margin-bottom: 20px;
+        }
+
+        .project-link {
+            color: white;
+            text-decoration: none;
+        }
+
+        .project-link:hover {
+            color: #00e5ff;
+        }
+
+        /* EDUCATION */
+
+        .education-card {
+            background: #111;
+            padding: 30px;
+            border-left: 3px solid #00e5ff;
+            max-width: 750px;
+        }
+
+        .education-card p {
+            color: #aaa;
+        }
+
+        /* CONTACT */
+
+        .contact {
+            text-align: center;
+        }
+
+        .contact p {
+            color: #aaa;
+            margin-bottom: 25px;
+        }
+
+        .socials a {
+            color: white;
+            text-decoration: none;
+            margin: 0 12px;
+        }
+
+        .socials a:hover {
+            color: #00e5ff;
+        }
+
+        /* FOOTER */
+
+        footer {
+            text-align: center;
+            padding: 25px;
+            border-top: 1px solid #222;
+            color: #777;
+        }
+
+        /* MOBILE */
+
+        @media (max-width: 700px) {
+
+            header {
+                padding: 18px 5%;
+            }
+
+            nav {
+                display: none;
+            }
+
+            section {
+                padding: 80px 6%;
+            }
+
+            .hero {
+                padding: 120px 6% 60px;
+            }
+
+            .hero h1 {
+                font-size: 50px;
+            }
+
+            .buttons {
+                flex-direction: column;
+                width: fit-content;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+
+    <header>
+
+        <div class="logo">
+            K<span>.</span>K
+        </div>
+
+        <nav>
+            <a href="#home">Home</a>
+            <a href="#about">About</a>
+            <a href="#skills">Skills</a>
+            <a href="#projects">Projects</a>
+            <a href="#education">Education</a>
+            <a href="#contact">Contact</a>
+        </nav>
+
+    </header>
+
+
+    <!-- HOME -->
+
+    <section class="hero" id="home">
+
+        <div class="hero-content">
+
+            <div class="small-title">
+                HELLO, I'M
+            </div>
+
+            <h1>
+                Karthi <span>Keyan.</span>
+            </h1>
+
+            <h2>
+                Computer Science Engineering Student
+            </h2>
+
+            <p>
+                Passionate about software development, problem solving
+                and building innovative technology solutions.
+            </p>
+
+            <div class="buttons">
+
+                <a href="#projects" class="btn primary">
+                    View Projects
+                </a>
+
+                <a href="#contact" class="btn secondary">
+                    Contact Me
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ABOUT -->
+
+    <section id="about">
+
+        <h2 class="section-title">
+            About <span>Me</span>
+        </h2>
+
+        <p class="about">
+
+            I am a Computer Science Engineering student interested in
+            software development and modern technologies. I enjoy
+            learning programming, developing projects and solving
+            real-world problems through technology.
+
+        </p>
+
+    </section>
+
+
+    <!-- SKILLS -->
+
+    <section id="skills">
+
+        <h2 class="section-title">
+            My <span>Skills</span>
+        </h2>
+
+        <div class="skills-container">
+
+            <div class="skill">
+                <h3>Java</h3>
+                <p>Programming</p>
+            </div>
+
+            <div class="skill">
+                <h3>Python</h3>
+                <p>Programming</p>
+            </div>
+
+            <div class="skill">
+                <h3>SQL</h3>
+                <p>Database</p>
+            </div>
+
+            <div class="skill">
+                <h3>HTML & CSS</h3>
+                <p>Web Development</p>
+            </div>
+
+            <div class="skill">
+                <h3>JavaScript</h3>
+                <p>Web Development</p>
+            </div>
+
+            <div class="skill">
+                <h3>DSA</h3>
+                <p>Problem Solving</p>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- PROJECTS -->
+
+    <section id="projects">
+
+        <h2 class="section-title">
+            Featured <span>Projects</span>
+        </h2>
+
+        <div class="projects">
+
+            <div class="project-card">
+
+                <h3>Bug Tracker System</h3>
+
+                <p>
+                    A desktop-based bug tracking system developed
+                    using Java Swing and MySQL.
+                </p>
+
+                <a href="#" class="project-link">
+                    View Project →
+                </a>
+
+            </div>
+
+
+            <div class="project-card">
+
+                <h3>AI Deepfake Detection</h3>
+
+                <p>
+                    An AI-based project focused on detecting
+                    manipulated or deepfake media.
+                </p>
+
+                <a href="#" class="project-link">
+                    View Project →
+                </a>
+
+            </div>
+
+
+            <div class="project-card">
+
+                <h3>DDoS Attack Detection</h3>
+
+                <p>
+                    SDN-based approach for detecting and mitigating
+                    network DDoS attacks.
+                </p>
+
+                <a href="#" class="project-link">
+                    View Project →
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- EDUCATION -->
+
+    <section id="education">
+
+        <h2 class="section-title">
+            <span>Education</span>
+        </h2>
+
+        <div class="education-card">
+
+            <h3>Bachelor of Engineering</h3>
+
+            <p>
+                Computer Science and Engineering
+            </p>
+
+            <p>
+                Currently pursuing
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- CONTACT -->
+
+    <section class="contact" id="contact">
+
+        <h2 class="section-title">
+            Let's <span>Connect</span>
+        </h2>
+
+        <p>
+            Interested in working together or discussing technology?
+        </p>
+
+        <div class="buttons" style="justify-content:center;">
+
+            <a href="mailto:your-email@example.com"
+               class="btn primary">
+                Email Me
+            </a>
+
+        </div>
+
+        <br>
+
+        <div class="socials">
+
+            <a href="#">GitHub</a>
+            <a href="#">LinkedIn</a>
+
+        </div>
+
+    </section>
+
+
+    <!-- FOOTER -->
+
+    <footer>
+
+        © 2026 Karthi Keyan. All Rights Reserved.
+
+    </footer>
+
+</body>
+
+</html>
